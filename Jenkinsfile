@@ -13,7 +13,7 @@ pipeline {
                 echo "Running Selenium Tests using pytest"
 
                 // Install Python dependencies
-                sh 'pip install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt'
 
                 // Start Flask application in background
                 sh 'start /B python app.py'
@@ -22,7 +22,7 @@ pipeline {
                 sh 'ping 127.0.0.1 -n 5 > nul'
 
                 // Run Selenium tests
-                sh 'python -m pytest -v'
+                sh 'python3 -m pytest -v'
             }
         }
 
