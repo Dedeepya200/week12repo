@@ -16,7 +16,7 @@ pipeline {
                 sh 'pip3 install -r requirements.txt'
 
                 // Start Flask application in background
-                sh 'start /B python app.py'
+                sh 'python app.py &'
 
                 // Wait for Flask application to start
                 sh 'ping 127.0.0.1 -n 5 > nul'
